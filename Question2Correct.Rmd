@@ -1,0 +1,54 @@
+---
+title: "Week2RQuestions"
+output: html_document
+---
+
+```{r}
+factsinlge <-function(n, r)
+{
+  factnum.n <- n
+  factnum.r <- r
+  factnum.n_minus_r <- factnum.n - factnum.r
+  holder.n <-factnum.n
+  holder.r <-factnum.r
+  holder.n_minus_r <- factnum.n_minus_r
+  i <- 1
+  i.2 <-1
+  i.3 <-1
+  final.result <-1
+  
+if (n == r) {print(final.result)}
+else if (n < r){print("Error, n must be greater than of equal to r")}
+else{
+while (i < holder.n)
+{
+  factnum.n <- factnum.n * i
+  i <- i + 1
+}
+
+while (i.2 < holder.r)
+{
+  factnum.r <- factnum.r * i.2
+  i.2 <- i.2 + 1
+}
+
+while (i.3 < holder.n_minus_r)
+{
+  factnum.n_minus_r <- factnum.n_minus_r * i.3
+  i.3 <- i.3 + 1
+}
+
+
+final.result <- factnum.n / (factnum.n_minus_r * factnum.r)
+print(final.result)
+}
+}
+
+
+factsinlge(5, 6)
+factsinlge(5, 4)
+factsinlge(5, 3)
+factsinlge(10, 1)
+```
+
+Much better!
