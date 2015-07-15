@@ -1,0 +1,39 @@
+---
+title: "Week 3 R Homework"
+output: html_document
+---
+First, I will read in the data set.
+
+Second, we will delete all columns except the column indicating edible or poisonous and those related to the cap of the mushroom.
+
+Third, we will keep only the first 25 rows of data.
+
+Will rename variables then using the gdata R package
+
+```{r}
+getwd()
+MushroomsData = read.csv("Mushrooms_Dataset.csv")
+MushroomsData = MushroomsData[-c(1,6:24)]
+MushroomsData = MushroomsData[-seq(nrow(MushroomsData),nrow(MushroomsData)-8098),]
+theDF <- data.frame(MushroomsData)
+names(theDF) <- c("Edible or Poisonous", "Cap Shape", "Cap Surface", "Cap Color")
+rename.vars(theDF, from = "e", to = "edible", info = TRUE)
+rename.vars(theDF, from = "p", to = "poisonous", info = TRUE)
+rename.vars(theDF, from = "f", to = "flat", info = TRUE)
+rename.vars(theDF, from = "x", to = "convex", info = TRUE)
+rename.vars(theDF, from = "b", to = "bell", info = TRUE)
+rename.vars(theDF, from = "c", to = "conical", info = TRUE)
+rename.vars(theDF, from = "k", to = "knobbed", info = TRUE)
+rename.vars(theDF, from = "s", to = "sucken", info = TRUE)
+rename.vars(theDF, from = "g", to = "grooves", info = TRUE)
+rename.vars(theDF, from = "y", to = "scaly", info = TRUE)
+rename.vars(theDF, from = "n", to = "brown", info = TRUE)
+rename.vars(theDF, from = "b", to = "buff", info = TRUE)
+rename.vars(theDF, from = "c", to = "cinnamon", info = TRUE)
+rename.vars(theDF, from = "r", to = "green", info = TRUE)
+rename.vars(theDF, from = "p", to = "pink", info = TRUE)
+rename.vars(theDF, from = "u", to = "purple", info = TRUE)
+rename.vars(theDF, from = "w", to = "white", info = TRUE)
+theDF
+
+```
